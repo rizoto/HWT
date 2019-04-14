@@ -20,8 +20,21 @@ class HWTTests: XCTestCase {
     }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        UIGraphicsBeginImageContext(CGSize(width: 200, height: 200))
+        if let ctx = UIGraphicsGetCurrentContext() {
+            ctx.setFillColor(UIColor.yellow.cgColor)
+            ctx.fill(CGRect(x: 0, y: 0, width: 200, height: 200))
+            ctx.setLineCap(.round)
+            ctx.setLineWidth(10.0)
+            ctx.setStrokeColor(red: 255, green: 255, blue: 255, alpha: 1)
+            ctx.move(to: CGPoint.init(x: 0, y: 0))
+            ctx.addLine(to: CGPoint.init(x: 200, y: 200))
+            ctx.strokePath()
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            // add breakpoint and check the image
+            XCTAssert(image != nil)
+        }
+        UIGraphicsEndImageContext()
     }
 
     func testPerformanceExample() {
