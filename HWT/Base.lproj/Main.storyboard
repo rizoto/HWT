@@ -18,8 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3fA-Lf-q20">
+                                <rect key="frame" x="20" y="55" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="go2-jg-p3T">
+                                <rect key="frame" x="356" y="475" width="30" height="30"/>
+                                <state key="normal" title="Test"/>
+                                <connections>
+                                    <action selector="testImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="31I-TY-VJf"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="17k-FC-Ar7">
-                                <rect key="frame" x="20" y="44" width="374" height="374"/>
+                                <rect key="frame" x="20" y="93" width="374" height="374"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="17k-FC-Ar7" secondAttribute="height" multiplier="1:1" id="U5k-Ce-Ayg"/>
@@ -29,13 +42,19 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="17k-FC-Ar7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1dU-fN-ybF"/>
+                            <constraint firstItem="17k-FC-Ar7" firstAttribute="top" secondItem="3fA-Lf-q20" secondAttribute="bottom" constant="8" id="2zq-4r-W46"/>
+                            <constraint firstItem="3fA-Lf-q20" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="DPw-dG-XeC"/>
+                            <constraint firstItem="3fA-Lf-q20" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="L9e-v8-doz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="go2-jg-p3T" secondAttribute="trailing" constant="28" id="ZDz-rM-N05"/>
+                            <constraint firstItem="go2-jg-p3T" firstAttribute="top" secondItem="17k-FC-Ar7" secondAttribute="bottom" constant="8" id="bfm-DF-jc5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="17k-FC-Ar7" secondAttribute="trailing" constant="20" id="izV-ri-tzs"/>
-                            <constraint firstItem="17k-FC-Ar7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="y4n-0y-wxp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3fA-Lf-q20" secondAttribute="trailing" constant="20" id="nGO-M1-aJU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="canvas" destination="17k-FC-Ar7" id="9Zr-QS-0g0"/>
+                        <outlet property="textDigits" destination="3fA-Lf-q20" id="CZG-Nu-goE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
